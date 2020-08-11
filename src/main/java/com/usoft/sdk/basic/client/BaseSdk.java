@@ -1,4 +1,4 @@
-package com.usoft.sdk.basic.sso.client;
+package com.usoft.sdk.basic.client;
 
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Message;
