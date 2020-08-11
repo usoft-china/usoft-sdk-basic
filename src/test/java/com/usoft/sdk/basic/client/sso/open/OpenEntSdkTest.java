@@ -6,6 +6,7 @@ import com.usoft.sso.external.open.api.protobuf.*;
 import org.junit.Test;
 
 /**
+ * 企业sdk测试类
  * @author uas
  * @date 2020/6/19 16:26
  */
