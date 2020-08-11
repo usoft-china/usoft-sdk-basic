@@ -31,7 +31,18 @@ steps:
     branch:
     - master
     event:
-    - push    
+    - push
+
+- name: sync_github_develop
+  image: usoft/protoc-gen-doc:3.6.1
+  commands:
+    - git remote add github git@github.com:usoft-china/usoft-sdk-basic.git
+    - git push github develop:develop
+  when:
+    branch:
+      - develop
+    event:
+      - push
 
 - name: notify_email
   image: drillster/drone-email
