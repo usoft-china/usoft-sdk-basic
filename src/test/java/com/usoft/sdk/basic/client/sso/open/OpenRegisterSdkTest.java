@@ -13,7 +13,7 @@ public class OpenRegisterSdkTest {
     /**
      * 测试地址
      */
-    private OpenRegisterSdk openRegisterSdk = new OpenRegisterSdk("https://ssorest.uuzcc.cn", "10042875", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenRegisterSdk openRegisterSdk = new OpenRegisterSdk("https://ssorest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
 
     /**
      * 正式地址

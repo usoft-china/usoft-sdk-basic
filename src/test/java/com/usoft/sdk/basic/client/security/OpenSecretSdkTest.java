@@ -15,7 +15,7 @@ public class OpenSecretSdkTest {
     /**
      * 测试地址
      */
-    private OpenSecretSdk openSecretSdk = new OpenSecretSdk("https://securityrest.uuzcc.cn", "10042875", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenSecretSdk openSecretSdk = new OpenSecretSdk("https://securityrest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
 
     /**
      * 正式地址

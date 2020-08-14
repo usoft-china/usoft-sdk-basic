@@ -14,12 +14,13 @@ import java.util.Map;
  * @date 2020/8/11 15:59
  */
 public class OpenSecretSdk extends BaseSdk {
-    public OpenSecretSdk(String baseUrl, String secretId, String secretKey) {
-        super(baseUrl, secretId, secretKey);
+
+    public OpenSecretSdk(String baseUrl, String secretKey) {
+        super(baseUrl, secretKey);
     }
 
-    public OpenSecretSdk(String baseUrl, String secretId, String secretKey, int timeout) {
-        super(baseUrl, secretId, secretKey, timeout);
+    public OpenSecretSdk(String baseUrl, String secretKey, int timeout) {
+        super(baseUrl, secretKey, timeout);
     }
 
     /**

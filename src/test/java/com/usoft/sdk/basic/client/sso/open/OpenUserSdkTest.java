@@ -12,7 +12,7 @@ public class OpenUserSdkTest {
     /**
      * 测试地址
      */
-    private OpenUserSdk openUserSdk = new OpenUserSdk("https://ssorest.uuzcc.cn", "10042875", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenUserSdk openUserSdk = new OpenUserSdk("https://ssorest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
 
     /**
      * 正式地址

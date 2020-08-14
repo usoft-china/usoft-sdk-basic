@@ -14,7 +14,7 @@ public class OpenEntSdkTest {
     /**
      * 测试地址
      */
-    private OpenEntSdk openEntSdk = new OpenEntSdk("https://ssorest.uuzcc.cn", "10042875", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenEntSdk openEntSdk = new OpenEntSdk("https://ssorest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
 
     /**
      * 正式地址
@@ -36,6 +36,7 @@ public class OpenEntSdkTest {
         req.setAddr("WCY-1");
         req.setPhone("13686489132");
         req.setFax("123456");
+        req.setName("一个测试的企业1");
         req.setBusinessAF(AttachFile.newBuilder().setUrl("https://static.usoftchina.com/appb2b/12200811710911241349.jpg").setName("123.jpg").build());
         UpdateEnterpriseResp resp = openEntSdk.updateEnterprise(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
