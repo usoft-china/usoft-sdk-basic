@@ -59,4 +59,16 @@ public class OpenEntSdkTest {
         UnbindUserEntResp resp = openEntSdk.unbindUserEnt(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void pagingEnterprise() throws Exception {
+        PagingEnterpriseReq.Builder req = PagingEnterpriseReq.newBuilder();
+        // 数据修改时间 时间戳(单位：毫秒)
+        req.setUpdateTime(1600153312000l);
+        // 分页参数不传 默认返回10条
+        req.setPageNumber(1);
+        req.setPageSize(100);
+        PagingEnterpriseResp resp = openEntSdk.pagingEnterprise(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
 }

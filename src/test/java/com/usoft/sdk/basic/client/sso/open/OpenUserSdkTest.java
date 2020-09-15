@@ -53,4 +53,16 @@ public class OpenUserSdkTest {
         UpdateMobileResp resp = openUserSdk.updateMobile(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void updateUser() throws Exception {
+        UpdateUserReq.Builder req = UpdateUserReq.newBuilder();
+        req.setUu(1000027231);
+        req.setName("ASDJLJL12");
+        req.setSex(2);
+        req.setQq("132442342");
+        req.setWechar("rhru0");
+        UpdateUserResp resp = openUserSdk.updateUser(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
 }

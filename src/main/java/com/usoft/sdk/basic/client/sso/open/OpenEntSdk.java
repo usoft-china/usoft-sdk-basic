@@ -77,4 +77,18 @@ public class OpenEntSdk extends BaseSdk {
         UnbindUserEntResp.Builder resp = ProtoBufUtil.toProtoBuf(UnbindUserEntResp.newBuilder(), respJson);
         return resp.build();
     }
+
+    /**
+     * 分页获取企业列表
+     *
+     * @param req
+     * @return
+     */
+    public PagingEnterpriseResp pagingEnterprise(PagingEnterpriseReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/enterprise/paging";
+        Map<String, String> params = genSignToMap(req);
+        String respJson = HttpUtil.doGet(url, params, timeout);
+        PagingEnterpriseResp.Builder resp = ProtoBufUtil.toProtoBuf(PagingEnterpriseResp.newBuilder(), respJson);
+        return resp.build();
+    }
 }

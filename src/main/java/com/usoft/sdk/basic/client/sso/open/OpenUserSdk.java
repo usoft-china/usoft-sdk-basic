@@ -77,4 +77,18 @@ public class OpenUserSdk extends BaseSdk {
         UpdateMobileResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateMobileResp.newBuilder(), respJson);
         return resp.build();
     }
+
+    /**
+     * 修改用户信息
+     *
+     * @param req
+     * @return
+     */
+    public UpdateUserResp updateUser(UpdateUserReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/user/update";
+        String paramJson = genSignToJson(req);
+        String respJson = HttpUtil.doPost(url, paramJson, timeout);
+        UpdateUserResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateUserResp.newBuilder(), respJson);
+        return resp.build();
+    }
 }
