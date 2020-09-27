@@ -3,10 +3,9 @@ package com.usoft.sdk.basic.client.sso.open;
 import com.usoft.sdk.basic.client.BaseSdk;
 import com.usoft.sdk.basic.utils.HttpUtil;
 import com.usoft.sdk.basic.utils.ProtoBufUtil;
-import com.usoft.sso.external.open.api.protobuf.SwitchEnterpriseReq;
-import com.usoft.sso.external.open.api.protobuf.SwitchEnterpriseResp;
-import com.usoft.sso.external.open.api.protobuf.UserLoginReq;
-import com.usoft.sso.external.open.api.protobuf.UserLoginResp;
+import com.usoft.sso.external.open.api.protobuf.*;
+
+import java.util.Map;
 
 /**
  * 登录sdk
@@ -48,6 +47,19 @@ public class OpenLoginSdk extends BaseSdk {
         String paramJson = genSignToJson(req);
         String respJson = HttpUtil.doPost(url, paramJson, timeout);
         SwitchEnterpriseResp.Builder resp = ProtoBufUtil.toProtoBuf(SwitchEnterpriseResp.newBuilder(), respJson);
+        return resp.build();
+    }
+    /**
+     * 获取登录态（返回-201 表示 用户未登录）
+     *
+     * @param req
+     * @return
+     */
+    public GetLoginStateResp getLoginState(GetLoginStateReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/login/state/get";
+        Map<String, String> params = genSignToMap(req);
+        String respJson = HttpUtil.doGet(url, params, timeout);
+        GetLoginStateResp.Builder resp = ProtoBufUtil.toProtoBuf(GetLoginStateResp.newBuilder(), respJson);
         return resp.build();
     }
 }

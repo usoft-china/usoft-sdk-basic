@@ -37,4 +37,12 @@ public class OpenLoginSdkTest {
         SwitchEnterpriseResp resp = openLoginSdk.switchEnterprise(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void getLoginState() throws Exception {
+        GetLoginStateReq.Builder req = GetLoginStateReq.newBuilder();
+        req.setToken("ed27ee39-9fe8-40fb-b593-2ba73aa8160b");
+        GetLoginStateResp resp = openLoginSdk.getLoginState(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
 }
