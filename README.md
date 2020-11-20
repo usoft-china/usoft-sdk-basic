@@ -47,7 +47,9 @@
 
 ## API文档地址
 
-[API文档地址](https://document.usoftchina.com/basic)
+[账户中心 API文档地址](https://static.usoftchina.com/front/basic_sso.html#sso2.open.IOpenLoginService)
+
+[权限服务 API文档地址](https://static.usoftchina.com/front/basic_security.html#security.open.IOpenSecretService)
 
 ## 使用示例地址
 
