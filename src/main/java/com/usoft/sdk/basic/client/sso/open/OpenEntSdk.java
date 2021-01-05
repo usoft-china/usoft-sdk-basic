@@ -91,4 +91,32 @@ public class OpenEntSdk extends BaseSdk {
         PagingEnterpriseResp.Builder resp = ProtoBufUtil.toProtoBuf(PagingEnterpriseResp.newBuilder(), respJson);
         return resp.build();
     }
+
+    /**
+     * 获取企业印章
+     *
+     * @param req
+     * @return
+     */
+    public GetEntSignetResp getEntSignet(GetEntSignetReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/enterprise/signet/get";
+        Map<String, String> params = genSignToMap(req);
+        String respJson = HttpUtil.doGet(url, params, timeout);
+        GetEntSignetResp.Builder resp = ProtoBufUtil.toProtoBuf(GetEntSignetResp.newBuilder(), respJson);
+        return resp.build();
+    }
+
+    /**
+     * 更新企业印章
+     *
+     * @param req
+     * @return
+     */
+    public UpdateEntSignetResp updateEntSignet(UpdateEntSignetReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/enterprise/signet/update";
+        String paramJson = genSignToJson(req);
+        String respJson = HttpUtil.doPost(url, paramJson, timeout);
+        UpdateEntSignetResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateEntSignetResp.newBuilder(), respJson);
+        return resp.build();
+    }
 }
