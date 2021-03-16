@@ -22,7 +22,8 @@ public class OpenUserSdkTest {
     @Test
     public void getUserInfo() throws Exception {
         GetUserInfoReq.Builder req = GetUserInfoReq.newBuilder();
-        req.setMobile("13686489139");
+//        req.setMobile("13686489139");
+        req.setWxUnionid("o-oy10-vIQoaZLLov51Swgj9EYms");
         GetUserInfoResp resp = openUserSdk.getUserInfo(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }

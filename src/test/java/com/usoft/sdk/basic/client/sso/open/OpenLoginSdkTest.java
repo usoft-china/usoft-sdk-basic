@@ -45,4 +45,13 @@ public class OpenLoginSdkTest {
         GetLoginStateResp resp = openLoginSdk.getLoginState(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void bindWeChat() throws Exception {
+        BindWeChatReq.Builder req = BindWeChatReq.newBuilder();
+        req.setMobile("13686489131");//o-oy10-vIQoaZLLov51Swgj9EYms
+        req.setWxUnionid("o-oy10-vIQoaZLLov51Swgj9EYms");
+        BindWeChatResp resp = openLoginSdk.bindWeChat(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
 }

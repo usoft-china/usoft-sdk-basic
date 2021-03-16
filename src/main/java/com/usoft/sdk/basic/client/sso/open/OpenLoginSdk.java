@@ -9,6 +9,7 @@ import java.util.Map;
 
 /**
  * 登录sdk
+ *
  * @author uas
  * @date 2020/8/11 15:59
  */
@@ -49,6 +50,7 @@ public class OpenLoginSdk extends BaseSdk {
         SwitchEnterpriseResp.Builder resp = ProtoBufUtil.toProtoBuf(SwitchEnterpriseResp.newBuilder(), respJson);
         return resp.build();
     }
+
     /**
      * 获取登录态（返回-201 表示 用户未登录）
      *
@@ -60,6 +62,20 @@ public class OpenLoginSdk extends BaseSdk {
         Map<String, String> params = genSignToMap(req);
         String respJson = HttpUtil.doGet(url, params, timeout);
         GetLoginStateResp.Builder resp = ProtoBufUtil.toProtoBuf(GetLoginStateResp.newBuilder(), respJson);
+        return resp.build();
+    }
+
+    /**
+     * 微信绑定手机号
+     *
+     * @param req
+     * @return
+     */
+    public BindWeChatResp bindWeChat(BindWeChatReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/login/wechat/bind";
+        String paramJson = genSignToJson(req);
+        String respJson = HttpUtil.doPost(url, paramJson, timeout);
+        BindWeChatResp.Builder resp = ProtoBufUtil.toProtoBuf(BindWeChatResp.newBuilder(), respJson);
         return resp.build();
     }
 }
