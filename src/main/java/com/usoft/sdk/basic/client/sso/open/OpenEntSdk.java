@@ -119,4 +119,18 @@ public class OpenEntSdk extends BaseSdk {
         UpdateEntSignetResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateEntSignetResp.newBuilder(), respJson);
         return resp.build();
     }
+
+    /**
+     * 企业更换管理员
+     *
+     * @param req
+     * @return
+     */
+    public ChangeEnterpriseAdminResp changeEnterpriseAdmin(ChangeEnterpriseAdminReq.Builder req) throws Exception {
+        String url = baseUrl + "/openapi/enterprise/admin/update";
+        String paramJson = genSignToJson(req);
+        String respJson = HttpUtil.doPost(url, paramJson, timeout);
+        ChangeEnterpriseAdminResp.Builder resp = ProtoBufUtil.toProtoBuf(ChangeEnterpriseAdminResp.newBuilder(), respJson);
+        return resp.build();
+    }
 }

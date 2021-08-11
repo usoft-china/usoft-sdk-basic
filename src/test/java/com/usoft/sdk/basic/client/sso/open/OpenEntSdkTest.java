@@ -99,4 +99,20 @@ public class OpenEntSdkTest {
         UpdateEntSignetResp resp = openEntSdk.updateEntSignet(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void changeEnterpriseAdmin() throws Exception {
+        ChangeEnterpriseAdminReq.Builder req = ChangeEnterpriseAdminReq.newBuilder();
+        req.setEnuu(10050624);
+        ChangeEnterpriseAdminReq.ChangeEntAdmin.Builder admin1 = ChangeEnterpriseAdminReq.ChangeEntAdmin.newBuilder();
+        admin1.setName("123");
+        admin1.setMobile("18566650467");
+        req.addChangeEntAdmin(admin1);
+        ChangeEnterpriseAdminReq.ChangeEntAdmin.Builder admin2 = ChangeEnterpriseAdminReq.ChangeEntAdmin.newBuilder();
+        admin2.setName("y");
+        admin2.setMobile("13308649041");
+        req.addChangeEntAdmin(admin2);
+        ChangeEnterpriseAdminResp resp = openEntSdk.changeEnterpriseAdmin(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
 }
