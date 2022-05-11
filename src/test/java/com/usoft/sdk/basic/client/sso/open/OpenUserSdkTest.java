@@ -58,12 +58,21 @@ public class OpenUserSdkTest {
     @Test
     public void updateUser() throws Exception {
         UpdateUserReq.Builder req = UpdateUserReq.newBuilder();
-        req.setUu(1000027231);
-        req.setName("ASDJLJL12");
+        req.setUu(200040196);
+        req.setName("叶");
         req.setSex(2);
         req.setQq("132442342");
         req.setWechar("rhru0");
         UpdateUserResp resp = openUserSdk.updateUser(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
+
+    @Test
+    public void updateEmail() throws Exception {
+        UpdateEmailReq.Builder req = UpdateEmailReq.newBuilder();
+        req.setUu(200040196);
+        req.setEmail("yejq@worldshinedata.com");
+        UpdateEmailResp resp = openUserSdk.updateEmail(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
 }
